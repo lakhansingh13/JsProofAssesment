@@ -1,0 +1,59 @@
+/*
+Assessment Requirements
+1. Create a variable that can hold a number of NFT's. What type of variable might this be?
+2. Create an object inside your mintNFT function that will hold the metadata for your NFTs. 
+   The metadata values will be passed to the function as parameters. When the NFT is ready, 
+   you will store it in the variable you created in step 1
+3. Your listNFTs() function will print all of your NFTs metadata to the console (i.e. console.log("Name: " + someNFT.name))
+4. For good measure, getTotalSupply() should return the number of NFT's you have created
+*/
+
+// Step 1: Create a variable to hold  NFTs
+let nftCollection = [];
+
+// Step 2: Create the mintNFT function
+function mintNFT(name, skinColor, eyeColor, shirtType, bling, bodyType, hairColor, height) {
+    let nft = {
+        name: name,
+        skinColor: skinColor,
+        eyeColor: eyeColor,
+        shirtType: shirtType,
+        bling: bling,
+        bodyType: bodyType,
+        hairColour: hairColor,
+        height: height 
+    };
+    nftCollection.push(nft);
+}
+
+// Step 3: Create the listNFTs function
+function listNFTs() {
+    for (let i = 0; i < nftCollection.length; i++) {
+        console.log("NFT Number: " + (i + 1));
+        console.log("Name: " + nftCollection[i].name);
+        console.log("Hair Color: " + nftCollection[i].hairColor);
+        console.log("Eye Color: " + nftCollection[i].eyeColor);
+        console.log("Shirt Type: " + nftCollection[i].shirtType);
+        console.log("Bling: " + nftCollection[i].bling);
+        console.log("Body Type: " + nftCollection[i].bodyType);
+        console.log("Hair Color: " + nftCollection[i].hairColor);
+        console.log("Height: " + nftCollection[i].height);
+        console.log("\n\n");
+    }
+}
+
+// Step 4: Create the getTotalSupply function
+function getTotalSupply() {
+    return nftCollection.length;
+}
+
+// Step 5: Call your functions below this line
+mintNFT("Lakhan", "brown", "Blue", "T-Shirt", "Gold Chain", "Black", "Muscular", "Tall" );
+mintNFT("Sahil", "white", "Green", "Hoodie", "Diamond Ring", "Brown", "Lean", "Short");
+mintNFT("Abhishek", "Black", "Brown", "Sweater", "Silver Bracelet", "Red", "Fatty", "Tall");
+
+// List all NFTs
+listNFTs();
+
+// Print the total supply of NFTs
+console.log("Total NFTs Minted: " + getTotalSupply());
